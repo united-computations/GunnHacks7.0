@@ -144,8 +144,8 @@ h3 {
   color: black;
 }
 
-#sponsors a, h3 {
-  /*color:black!important;*/
+#sponsors a{
+  color:black!important;
 }
 
 #sponsors h2 {
