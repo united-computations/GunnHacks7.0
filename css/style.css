@@ -21,7 +21,7 @@ body {
   font-family: 'Roboto', 'Helvetica Neue';
 }
 
-#apply{
+.apply{
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
