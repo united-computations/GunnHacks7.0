@@ -18,7 +18,7 @@ body {
   background-size:cover;
   position:relative;
   height:100vh;
-  font-family: 'Roboto', 'Helvetica Neue';
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
 .button{
@@ -178,7 +178,7 @@ h1 {
     margin-bottom: 10px;
     color: white;
     font-weight: 300;
-    font-family: "Open Sans", "Helvetica Neue";
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 h3 {
@@ -186,7 +186,7 @@ h3 {
     color: white;
     font-size: 17pt!important;
     font-weight: bold;
-    font-family: "Abel", "Helvetica Neue";
+    font-family: "Abel", "Helvetica Neue", sans-serif;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
@@ -247,8 +247,7 @@ footer {
 }
 
 p {
-    margin: 0 10%;
-    font-family: "Helvetica", "Lato", sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 .contact-form input[type="email"] ,.contact-form input[type="submit"] {
