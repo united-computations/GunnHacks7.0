@@ -197,8 +197,8 @@ a:hover, button:hover {
 }
 
 a {
-  color: white !important;
-  text-decoration: underline !important;
+  color: white;
+  text-decoration: underline;
 }
 
 footer {

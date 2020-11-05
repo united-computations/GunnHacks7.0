@@ -1,0 +1,23 @@
+.error404 {
+  text-align: center;
+
+  img {
+    width: 400px;
+    height: 400px;
+    margin: 24px auto;
+  }
+
+  .text-content {
+    margin: 24px auto;
+    padding: 24px;
+    max-width: 800px;
+    background-color: #efefef;
+    border-radius: 5px;
+    font-size: 18pt;
+
+    a {
+      color: dimgrey;
+      text-decoration: none;
+    }
+  }
+}
