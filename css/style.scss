@@ -1,3 +1,12 @@
+@mixin background-size($value) {
+  -webkit-background-size: $value;
+  -moz-background-size: $value;
+  -o-background-size: $value;
+  background-size: $value;
+}
+
+
+
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -9,16 +18,13 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  @include background-size(cover);
   position: relative;
   height: 100vh;
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
-.apply, .button {
+%button-apply {
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
@@ -27,52 +33,60 @@ body {
 }
 
 .button {
+  @extend %button-apply;
   text-decoration: none;
   padding: 7px;
   background-color: transparent;
 }
 
 .apply {
+  @extend %button-apply;
   display: inline-block;
   padding: 15px 40px;
   margin: 20px 0;
   position: relative;
   color: #ecf0f1;
-  background-color: #d35d5c;
+  background-color: rgba(211, 93, 92, 1);
 }
 
 /*apply button*/
 #apply {
   color: #34495e;
   overflow: hidden;
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #f7a00a;
+    top: 0;
+    left: -100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:after {
+    bottom: 0 !important;
+    top: auto !important;
+    right: -100%;
+    left: auto;
+  }
+
+  &:hover {
+    background-color: rgba(255, 52, 35, 1);
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
 }
-#apply:before, #apply:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background-color: #f7a00a;
-  top: 0;
-  left: -100%;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-#apply:after {
-  bottom: 0 !important;
-  top: auto !important;
-  right: -100%;
-  left: auto;
-}
-#apply:hover {
-  background-color: #ff3423;
-}
-#apply:hover:before {
-  left: 0;
-}
-#apply:hover:after {
-  right: 0;
-}
+
 
 .content {
   font-family: "Helvetica", sans-serif;
@@ -89,14 +103,16 @@ body {
 .schedule {
   font-family: "Helvetica", sans-serif;
   margin-top: -10px;
+
+  h6 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15pt;
+    text-transform: uppercase;
+    font-family: "Abel";
+  }
 }
-.schedule h6 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 15pt;
-  text-transform: uppercase;
-  font-family: "Abel";
-}
+
 
 .nav {
   font-family: "Abel", "Helvetica", sans-serif;
@@ -104,27 +120,33 @@ body {
   word-spacing: 20px;
   font-size: 14pt;
   margin-top: 30px;
+
+  a {
+    text-decoration: none !important;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
 }
-.nav a {
-  text-decoration: none !important;
-}
-.nav a:hover {
-  text-decoration: underline !important;
-}
+
 
 .panel-group {
   color: #333 !important;
   border: 0;
+
+  .panel-title {
+    font-family: "Abel", sans-serif;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  a {
+    color: #e74c3c !important;
+    text-decoration: none !important;
+  }
 }
-.panel-group .panel-title {
-  font-family: "Abel", sans-serif;
-  text-transform: uppercase;
-  color: #333;
-}
-.panel-group a {
-  color: #e74c3c !important;
-  text-decoration: none !important;
-}
+
 
 .layer {
   position: absolute;
@@ -175,25 +197,30 @@ h3 {
 #sponsors {
   padding-top: 20px;
   color: black;
+
+  a {
+    color: black !important;
+  }
+
+  h2 {
+    border-bottom: 2px solid black !important;
+  }
+
+  button {
+    color: black;
+    border-color: black;
+  }
 }
-#sponsors a {
-  color: black !important;
-}
-#sponsors h2 {
-  border-bottom: 2px solid black !important;
-}
-#sponsors button {
-  color: black;
-  border-color: black;
-}
+
 
 a, button {
   text-decoration: inherit;
   color: white;
-}
-a:hover, button:hover {
-  color: #549bb8;
-  cursor: pointer;
+
+  &:hover {
+    color: #549bb8;
+    cursor: pointer;
+  }
 }
 
 a {
@@ -219,7 +246,7 @@ p {
   font-family: "Lato", sans-serif;
 }
 
-.contact-form input[type=email], .contact-form input[type=submit] {
+.contact-form input[type="email"], .contact-form input[type="submit"] {
   /*display: inline-block;*/
   /*padding: 0.8em;*/
   outline: none;
@@ -227,7 +254,7 @@ p {
   margin: 0;
 }
 
-.contact-form input[type=email] {
+.contact-form input[type="email"] {
   /*-webkit-transition: all 0.5s ease-in-out;*/
   /*transition: all 0.5s ease-in-out;*/
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -238,7 +265,7 @@ p {
   /*width: 72%;*/
 }
 
-.contact-form input[type=submit] {
+.contact-form input[type="submit"] {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -257,18 +284,19 @@ em {
 #info {
   opacity: 0;
   z-index: 1;
-  background: white;
+  background: rgb(255, 255, 255);
   position: absolute;
   width: 100%;
   height: auto;
   left: -100%;
-}
-#info p {
-  font-family: "Open Sans", sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  text-indent: 50px;
-  padding-bottom: 1rem;
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    text-indent: 50px;
+    padding-bottom: 1rem;
+  }
 }
 
 #info-wrapper {
@@ -291,8 +319,10 @@ em {
     font-size: 14pt !important;
   }
 }
+
+
 button {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 1rem;
   border: none;
@@ -300,10 +330,12 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 15px;
+
+  :focus {
+    outline: none;
+  }
 }
-button :focus {
-  outline: none;
-}
+
 
 .ps {
   text-align: center;
@@ -339,5 +371,3 @@ button :focus {
   margin-bottom: 0;
   margin-right: 1em;
 }
-
-/*# sourceMappingURL=style.css.map */
