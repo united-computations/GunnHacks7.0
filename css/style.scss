@@ -1,123 +1,21 @@
-section {
-  margin: 0 auto;
-  text-align: center;
-}
-section.centered {
-  height: 150px;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  margin-top: -120px;
-}
-section.centered #logo {
-  margin-top: -120px;
-  height: 120px;
-}
-section.centered h1 {
-  line-height: 1.5;
-  margin-bottom: 10px;
-  color: white;
-  font-weight: 300;
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
-}
-section.centered .nav {
-  font-family: "Abel", "Helvetica", sans-serif;
-  text-transform: uppercase;
-  word-spacing: 20px;
-  font-size: 14pt;
-  margin-top: 30px;
-}
-section.centered .nav a {
-  text-decoration: none;
-}
-section.centered .nav a:hover {
-  text-decoration: underline;
+@import './partials/_heading'; // Heading
+@import './partials/_schedule'; // Schedule
+@import './partials/_faq'; // FAQ
+@import './partials/_sponsors'; // Sponsors
+@import './partials/404'; // 404
+
+
+@mixin background-size($value) {
+  -webkit-background-size: $value;
+  -moz-background-size: $value;
+  -o-background-size: $value;
+  background-size: $value;
 }
 
-footer {
-  color: white;
-  font-size: 7pt;
-  text-align: center;
-  height: 40px;
-  width: 100%;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: -40px;
-  line-height: 1.25;
-  font-family: "Helvetica", sans-serif;
-}
-
-#schedule {
-  font-family: "Helvetica", sans-serif;
-}
-#schedule h6 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 15pt;
-  text-transform: uppercase;
-  font-family: "Abel";
-}
-
-#faq .question-whole {
-  padding: 1%;
-  margin: 1%;
-}
-#faq .question-whole .question {
-  font-size: 1.5em;
-  cursor: pointer;
-}
-#faq .question-whole .answer {
-  display: none;
-}
-#faq .question-whole .symbol h3 {
-  float: left;
-  margin-top: 0.01em;
-  margin-bottom: 0;
-  margin-right: 1em;
-}
-
-#sponsors {
-  background-color: white;
-  padding-top: 20px;
-  color: black;
-}
-#sponsors a {
-  color: black;
-}
-#sponsors h2 {
-  border-bottom: 2px solid black;
-}
-#sponsors button {
-  color: black;
-  border-color: black;
-}
-
-.error404 {
-  text-align: center;
-}
-.error404 img {
-  width: 20%;
-  height: 20%;
-  margin: 24px auto;
-}
-.error404 .text-content {
-  margin: 24px auto;
-  padding: 24px;
-  max-width: 60%;
-  background-color: rgba(239, 239, 239, 0.4);
-  border-radius: 5px;
-  font-size: 2.5rem;
-}
-.error404 .text-content a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.center > * > * {
+%margin-centered {
   margin: 0 auto 0 auto;
 }
+
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -125,28 +23,30 @@ body {
   overflow-x: hidden;
 }
 
+// The background and container for the GunnHacks heading (and 404 page)
 #hero {
   background-image: url("../img/bg.jpg") !important;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  @include background-size(cover);
   position: relative;
   height: 100vh;
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
-#hero h3, .center h3 {
-  margin-top: -10px;
-  color: white;
-  font-size: 17pt;
-  font-family: "Abel", "Helvetica Neue", sans-serif;
-  text-transform: uppercase;
+// Appears in the subtitle of the GunnHacks h1, and in various places around the sections below
+h3 {
+  #hero &, .center & {
+    margin-top: -10px;
+    color: white;
+    font-size: 17pt;
+    font-family: "Abel", "Helvetica Neue", sans-serif;
+    text-transform: uppercase;
+  }
 }
 
+// This CSS is not used?
 /*
 %button-apply {
   text-align: center;
@@ -211,20 +111,34 @@ body {
   }
 }
 */
+
+// The container for the FAQ, Schedule, Sponsors, and Previous Years sections
+// Previously a deprecated <center> tag
 .center {
   text-align: center;
-}
-.center .content {
-  font-family: "Helvetica", sans-serif;
-  text-align: left;
-  margin-top: 20px;
-}
-.center .content h2 {
-  border-bottom: 2px solid white;
-  font-family: "Abel";
-  text-transform: uppercase;
+  // These work and would remove the need of margin-centered but MDN recommends not using them in production builds
+  //text-align: -webkit-center;
+  //text-align: -moz-center;
+
+  > * > * {
+    @extend %margin-centered;
+  }
+
+  // The headers for the FAQ, Schedule, Sponsors, and Previous Years sections
+  .content {
+    font-family: "Helvetica", sans-serif;
+    text-align: left;
+    margin-top: 20px;
+
+    h2 {
+      border-bottom: 2px solid white;
+      font-family: "Abel";
+      text-transform: uppercase;
+    }
+  }
 }
 
+// This CSS is also not used
 /*
 .panel-group {
   color: #333 !important;
@@ -242,6 +156,8 @@ body {
   }
 }
 */
+
+// What is the purpose of this?
 .layer {
   position: absolute;
   top: 0;
@@ -257,16 +173,17 @@ a, button {
 
 a {
   text-decoration: underline;
-}
-a:hover {
-  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
 }
 
 p {
   font-family: "Lato", sans-serif;
 }
 
-.contact-form input[type=email], .contact-form input[type=submit] {
+.contact-form input[type="email"], .contact-form input[type="submit"] {
   /*display: inline-block;*/
   /*padding: 0.8em;*/
   outline: none;
@@ -274,7 +191,7 @@ p {
   margin: 0;
 }
 
-.contact-form input[type=email] {
+.contact-form input[type="email"] {
   /*-webkit-transition: all 0.5s ease-in-out;*/
   /*transition: all 0.5s ease-in-out;*/
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -285,7 +202,7 @@ p {
   /*width: 72%;*/
 }
 
-.contact-form input[type=submit] {
+.contact-form input[type="submit"] {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -304,18 +221,19 @@ em {
 #info {
   opacity: 0;
   z-index: 1;
-  background: white;
+  background: rgb(255, 255, 255);
   position: absolute;
   width: 100%;
   height: auto;
   left: -100%;
-}
-#info p {
-  font-family: "Open Sans", sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  text-indent: 50px;
-  padding-bottom: 1rem;
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    text-indent: 50px;
+    padding-bottom: 1rem;
+  }
 }
 
 #info-wrapper {
@@ -338,8 +256,10 @@ em {
     font-size: 14pt !important;
   }
 }
+
+
 button {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 1rem;
   border: none;
@@ -347,10 +267,12 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 15px;
+
+  :focus {
+    outline: none;
+  }
 }
-button :focus {
-  outline: none;
-}
+
 
 .ps {
   text-align: center;
@@ -365,5 +287,3 @@ button :focus {
 .home-wrapper {
   margin-top: 1rem;
 }
-
-/*# sourceMappingURL=style.css.map */
