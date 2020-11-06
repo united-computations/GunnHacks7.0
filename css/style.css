@@ -49,11 +49,10 @@ footer {
   font-family: "Helvetica", sans-serif;
 }
 
-.schedule {
+#schedule {
   font-family: "Helvetica", sans-serif;
-  margin-top: -10px;
 }
-.schedule h6 {
+#schedule h6 {
   text-align: center;
   font-weight: bold;
   font-size: 15pt;
@@ -114,6 +113,10 @@ footer {
 .error404 .text-content a {
   color: inherit;
   text-decoration: none;
+}
+
+.center > * > * {
+  margin: 0 auto 0 auto;
 }
 
 body {
@@ -210,7 +213,6 @@ body {
 */
 .center {
   text-align: center;
-  text-align: -webkit-center;
 }
 .center .content {
   font-family: "Helvetica", sans-serif;

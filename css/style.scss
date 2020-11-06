@@ -12,6 +12,10 @@
   background-size: $value;
 }
 
+%margin-centered {
+  margin: 0 auto 0 auto;
+}
+
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -112,7 +116,13 @@ h3 {
 // Previously a deprecated <center> tag
 .center {
   text-align: center;
-  text-align: -webkit-center;
+  // These work and would remove the need of margin-centered but MDN recommends not using them in production builds
+  //text-align: -webkit-center;
+  //text-align: -moz-center;
+
+  > * > * {
+    @extend %margin-centered;
+  }
 
   // The headers for the FAQ, Schedule, Sponsors, and Previous Years sections
   .content {
