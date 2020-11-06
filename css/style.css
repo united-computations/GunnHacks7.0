@@ -1,3 +1,121 @@
+section {
+  margin: 0 auto;
+  text-align: center;
+}
+section.centered {
+  height: 150px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -120px;
+}
+section.centered #logo {
+  margin-top: -120px;
+  height: 120px;
+}
+section.centered h1 {
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 300;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+section.centered .nav {
+  font-family: "Abel", "Helvetica", sans-serif;
+  text-transform: uppercase;
+  word-spacing: 20px;
+  font-size: 14pt;
+  margin-top: 30px;
+}
+section.centered .nav a {
+  text-decoration: none;
+}
+section.centered .nav a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  color: white;
+  font-size: 7pt;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: -40px;
+  line-height: 1.25;
+  font-family: "Helvetica", sans-serif;
+}
+
+.schedule {
+  font-family: "Helvetica", sans-serif;
+  margin-top: -10px;
+}
+.schedule h6 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15pt;
+  text-transform: uppercase;
+  font-family: "Abel";
+}
+
+#faq .question-whole {
+  padding: 1%;
+  margin: 1%;
+}
+#faq .question-whole .question {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+#faq .question-whole .answer {
+  display: none;
+}
+#faq .question-whole .symbol h3 {
+  float: left;
+  margin-top: 0.01em;
+  margin-bottom: 0;
+  margin-right: 1em;
+}
+
+#sponsors {
+  background-color: white;
+  padding-top: 20px;
+  color: black;
+}
+#sponsors a {
+  color: black;
+}
+#sponsors h2 {
+  border-bottom: 2px solid black;
+}
+#sponsors button {
+  color: black;
+  border-color: black;
+}
+
+.error404 {
+  text-align: center;
+}
+.error404 img {
+  width: 20%;
+  height: 20%;
+  margin: 24px auto;
+}
+.error404 .text-content {
+  margin: 24px auto;
+  padding: 24px;
+  max-width: 60%;
+  background-color: rgba(239, 239, 239, 0.4);
+  border-radius: 5px;
+  font-size: 2.5rem;
+}
+.error404 .text-content a {
+  color: inherit;
+  text-decoration: none;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -18,7 +136,16 @@ body {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
 }
 
-.apply, .button {
+#hero h3, .center h3 {
+  margin-top: -10px;
+  color: white;
+  font-size: 17pt;
+  font-family: "Abel", "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+}
+
+/*
+%button-apply {
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
@@ -27,105 +154,92 @@ body {
 }
 
 .button {
+  @extend %button-apply;
   text-decoration: none;
   padding: 7px;
   background-color: transparent;
 }
 
 .apply {
+  @extend %button-apply;
   display: inline-block;
   padding: 15px 40px;
   margin: 20px 0;
   position: relative;
   color: #ecf0f1;
-  background-color: #d35d5c;
+  background-color: rgba(211, 93, 92, 1);
 }
 
-/*apply button*/
+// apply button
 #apply {
   color: #34495e;
   overflow: hidden;
-}
-#apply:before, #apply:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background-color: #f7a00a;
-  top: 0;
-  left: -100%;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-#apply:after {
-  bottom: 0 !important;
-  top: auto !important;
-  right: -100%;
-  left: auto;
-}
-#apply:hover {
-  background-color: #ff3423;
-}
-#apply:hover:before {
-  left: 0;
-}
-#apply:hover:after {
-  right: 0;
-}
 
-.content {
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #f7a00a;
+    top: 0;
+    left: -100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:after {
+    bottom: 0 !important;
+    top: auto !important;
+    right: -100%;
+    left: auto;
+  }
+
+  &:hover {
+    background-color: rgba(255, 52, 35, 1);
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
+}
+*/
+.center {
+  text-align: center;
+  text-align: -webkit-center;
+}
+.center .content {
   font-family: "Helvetica", sans-serif;
   text-align: left;
   margin-top: 20px;
 }
-
-.content h2 {
+.center .content h2 {
   border-bottom: 2px solid white;
   font-family: "Abel";
   text-transform: uppercase;
 }
 
-.schedule {
-  font-family: "Helvetica", sans-serif;
-  margin-top: -10px;
-}
-.schedule h6 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 15pt;
-  text-transform: uppercase;
-  font-family: "Abel";
-}
-
-.nav {
-  font-family: "Abel", "Helvetica", sans-serif;
-  text-transform: uppercase;
-  word-spacing: 20px;
-  font-size: 14pt;
-  margin-top: 30px;
-}
-.nav a {
-  text-decoration: none !important;
-}
-.nav a:hover {
-  text-decoration: underline !important;
-}
-
+/*
 .panel-group {
   color: #333 !important;
   border: 0;
-}
-.panel-group .panel-title {
-  font-family: "Abel", sans-serif;
-  text-transform: uppercase;
-  color: #333;
-}
-.panel-group a {
-  color: #e74c3c !important;
-  text-decoration: none !important;
-}
 
+  .panel-title {
+    font-family: "Abel", sans-serif;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  a {
+    color: #e74c3c;
+    text-decoration: none;
+  }
+}
+*/
 .layer {
   position: absolute;
   top: 0;
@@ -134,85 +248,16 @@ body {
   height: 100%;
 }
 
-.centered {
-  height: 150px;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  margin-top: -120px;
-}
-
-section {
-  margin: 0 auto;
-  text-align: center;
-}
-
-h1 {
-  font-size: 42pt;
-  line-height: 1.5;
-  margin-bottom: 10px;
-  color: white;
-  font-weight: 300;
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-h3 {
-  margin-top: -10px !important;
-  color: white;
-  font-size: 17pt !important;
-  font-weight: bold;
-  font-family: "Abel", "Helvetica Neue", sans-serif;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-#logo {
-  margin-top: -120px;
-  height: 120px;
-}
-
-#sponsors {
-  padding-top: 20px;
-  color: black;
-}
-#sponsors a {
-  color: black !important;
-}
-#sponsors h2 {
-  border-bottom: 2px solid black !important;
-}
-#sponsors button {
-  color: black;
-  border-color: black;
-}
-
 a, button {
   text-decoration: inherit;
   color: white;
 }
-a:hover, button:hover {
-  color: #549bb8;
-  cursor: pointer;
-}
 
 a {
-  color: white;
   text-decoration: underline;
 }
-
-footer {
-  color: white;
-  font-size: 7pt;
-  text-align: center;
-  height: 40px;
-  width: 100%;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: -40px;
-  line-height: 1.25;
-  font-family: "Helvetica", sans-serif;
+a:hover {
+  color: inherit;
 }
 
 p {
@@ -231,7 +276,7 @@ p {
   /*-webkit-transition: all 0.5s ease-in-out;*/
   /*transition: all 0.5s ease-in-out;*/
   border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 3px 0px 0px 3px;
+  border-radius: 3px 0 0 3px;
   color: #5e6272;
   padding: 12px 100px 10px 10px;
   font-size: 12px;
@@ -317,27 +362,6 @@ button :focus {
 
 .home-wrapper {
   margin-top: 1rem;
-}
-
-.question-whole {
-  padding: 1%;
-  margin: 1%;
-}
-
-.question {
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-.answer {
-  display: none;
-}
-
-.symbol h3 {
-  float: left;
-  margin-top: 0.01em !important;
-  margin-bottom: 0;
-  margin-right: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */

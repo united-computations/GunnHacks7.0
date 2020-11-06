@@ -1,3 +1,10 @@
+@import './partials/_heading'; // Heading
+@import './partials/_schedule'; // Schedule
+@import './partials/_faq'; // FAQ
+@import './partials/_sponsors'; // Sponsors
+@import './partials/404'; // 404
+
+
 @mixin background-size($value) {
   -webkit-background-size: $value;
   -moz-background-size: $value;
@@ -6,13 +13,13 @@
 }
 
 
-
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   overflow-x: hidden;
 }
 
+// The background and container for the GunnHacks heading (and 404 page)
 #hero {
   background-image: url("../img/bg.jpg") !important;
   background-repeat: no-repeat;
@@ -24,6 +31,19 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
+// Appears in the subtitle of the GunnHacks h1, and in various places around the sections below
+h3 {
+  #hero &, .center & {
+    margin-top: -10px;
+    color: white;
+    font-size: 17pt;
+    font-family: "Abel", "Helvetica Neue", sans-serif;
+    text-transform: uppercase;
+  }
+}
+
+// This CSS is not used?
+/*
 %button-apply {
   text-align: center;
   text-transform: uppercase;
@@ -49,7 +69,7 @@ body {
   background-color: rgba(211, 93, 92, 1);
 }
 
-/*apply button*/
+// apply button
 #apply {
   color: #34495e;
   overflow: hidden;
@@ -86,51 +106,30 @@ body {
     }
   }
 }
+*/
 
+// The container for the FAQ, Schedule, Sponsors, and Previous Years sections
+// Previously a deprecated <center> tag
+.center {
+  text-align: center;
+  text-align: -webkit-center;
 
-.content {
-  font-family: "Helvetica", sans-serif;
-  text-align: left;
-  margin-top: 20px;
-}
+  // The headers for the FAQ, Schedule, Sponsors, and Previous Years sections
+  .content {
+    font-family: "Helvetica", sans-serif;
+    text-align: left;
+    margin-top: 20px;
 
-.content h2 {
-  border-bottom: 2px solid white;
-  font-family: "Abel";
-  text-transform: uppercase;
-}
-
-.schedule {
-  font-family: "Helvetica", sans-serif;
-  margin-top: -10px;
-
-  h6 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 15pt;
-    text-transform: uppercase;
-    font-family: "Abel";
-  }
-}
-
-
-.nav {
-  font-family: "Abel", "Helvetica", sans-serif;
-  text-transform: uppercase;
-  word-spacing: 20px;
-  font-size: 14pt;
-  margin-top: 30px;
-
-  a {
-    text-decoration: none !important;
-
-    &:hover {
-      text-decoration: underline !important;
+    h2 {
+      border-bottom: 2px solid white;
+      font-family: "Abel";
+      text-transform: uppercase;
     }
   }
 }
 
-
+// This CSS is also not used
+/*
 .panel-group {
   color: #333 !important;
   border: 0;
@@ -142,12 +141,13 @@ body {
   }
 
   a {
-    color: #e74c3c !important;
-    text-decoration: none !important;
+    color: #e74c3c;
+    text-decoration: none;
   }
 }
+*/
 
-
+// What is the purpose of this?
 .layer {
   position: absolute;
   top: 0;
@@ -156,90 +156,17 @@ body {
   height: 100%;
 }
 
-.centered {
-  height: 150px;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  margin-top: -120px;
-}
-
-section {
-  margin: 0 auto;
-  text-align: center;
-}
-
-h1 {
-  font-size: 42pt;
-  line-height: 1.5;
-  margin-bottom: 10px;
-  color: white;
-  font-weight: 300;
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-h3 {
-  margin-top: -10px !important;
-  color: white;
-  font-size: 17pt !important;
-  font-weight: bold;
-  font-family: "Abel", "Helvetica Neue", sans-serif;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-#logo {
-  margin-top: -120px;
-  height: 120px;
-}
-
-#sponsors {
-  padding-top: 20px;
-  color: black;
-
-  a {
-    color: black !important;
-  }
-
-  h2 {
-    border-bottom: 2px solid black !important;
-  }
-
-  button {
-    color: black;
-    border-color: black;
-  }
-}
-
-
 a, button {
   text-decoration: inherit;
   color: white;
-
-  &:hover {
-    color: #549bb8;
-    cursor: pointer;
-  }
 }
 
 a {
-  color: white;
   text-decoration: underline;
-}
 
-footer {
-  color: white;
-  font-size: 7pt;
-  text-align: center;
-  height: 40px;
-  width: 100%;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: -40px;
-  line-height: 1.25;
-  font-family: "Helvetica", sans-serif;
+  &:hover {
+    color: inherit;
+  }
 }
 
 p {
@@ -258,7 +185,7 @@ p {
   /*-webkit-transition: all 0.5s ease-in-out;*/
   /*transition: all 0.5s ease-in-out;*/
   border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 3px 0px 0px 3px;
+  border-radius: 3px 0 0 3px;
   color: #5e6272;
   padding: 12px 100px 10px 10px;
   font-size: 12px;
@@ -349,25 +276,4 @@ button {
 
 .home-wrapper {
   margin-top: 1rem;
-}
-
-.question-whole {
-  padding: 1%;
-  margin: 1%;
-}
-
-.question {
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-.answer {
-  display: none;
-}
-
-.symbol h3 {
-  float: left;
-  margin-top: 0.01em !important;
-  margin-bottom: 0;
-  margin-right: 1em;
 }

@@ -1,0 +1,15 @@
+// CSS for the Schedule section
+// For some reason schedule is formatted differently from sponsors and FAQ in the html, but oh well
+
+.schedule {
+  font-family: "Helvetica", sans-serif;
+  margin-top: -10px;
+
+  h6 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15pt;
+    text-transform: uppercase;
+    font-family: "Abel";
+  }
+}
