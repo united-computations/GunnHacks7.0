@@ -1,0 +1,65 @@
+// CSS for the Gunnhacks heading section
+
+// Is this level of nesting with CSS split between section and .centered really necessary?
+// This is the only time either of them show up in the html
+
+section {
+  margin: 0 auto;
+  text-align: center;
+
+  &.centered {
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -120px;
+
+    // The Lambda logo
+    #logo {
+      margin-top: -120px;
+      height: 120px;
+    }
+
+    // The GunnHacks heading
+    h1 {
+      line-height: 1.5;
+      margin-bottom: 10px;
+      color: white;
+      font-weight: 300;
+      font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    // The 3 links underneath the GunnHacks heading
+    .nav {
+      font-family: "Abel", "Helvetica", sans-serif;
+      text-transform: uppercase;
+      word-spacing: 20px;
+      font-size: 14pt;
+      margin-top: 30px;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// The "Sanctioned by the CS department" text
+footer {
+  color: white;
+  font-size: 7pt;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: -40px;
+  line-height: 1.25;
+  font-family: "Helvetica", sans-serif;
+}
