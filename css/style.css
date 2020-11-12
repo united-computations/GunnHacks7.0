@@ -366,4 +366,10 @@ button :focus {
   margin-top: 1rem;
 }
 
+#sponsors #sponsors-content img {
+  max-height: 8rem;
+  max-width: 30%;
+  margin: 0 2rem;
+}
+
 /*# sourceMappingURL=style.css.map */
