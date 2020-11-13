@@ -91,8 +91,8 @@ footer {
   color: black;
 }
 #sponsors a img {
-  max-height: 130px;
-  max-width: 300px;
+  max-height: 8rem;
+  max-width: 24rem;
 }
 #sponsors h2 {
   border-bottom: 2px solid black;
