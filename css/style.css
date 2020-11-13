@@ -80,11 +80,18 @@ footer {
 
 #sponsors {
   background-color: white;
-  padding-top: 20px;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
   color: black;
 }
 #sponsors a {
+  margin: 5px;
   color: black;
+}
+#sponsors a img {
+  max-height: 130px;
+  max-width: 300px;
 }
 #sponsors h2 {
   border-bottom: 2px solid black;
@@ -92,27 +99,6 @@ footer {
 #sponsors button {
   color: black;
   border-color: black;
-}
-
-.error404 {
-  text-align: center;
-}
-.error404 img {
-  width: 20%;
-  height: 20%;
-  margin: 24px auto;
-}
-.error404 .text-content {
-  margin: 24px auto;
-  padding: 24px;
-  max-width: 60%;
-  background-color: rgba(239, 239, 239, 0.4);
-  border-radius: 5px;
-  font-size: 2.5rem;
-}
-.error404 .text-content a {
-  color: inherit;
-  text-decoration: none;
 }
 
 .center > * > * {
@@ -186,9 +172,7 @@ body {
     background-color: #f7a00a;
     top: 0;
     left: -100%;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    @include transition(all 0.3s ease-in-out);
   }
 
   &:after {
@@ -267,26 +251,22 @@ p {
 }
 
 .contact-form input[type=email], .contact-form input[type=submit] {
-  /*display: inline-block;*/
-  /*padding: 0.8em;*/
   outline: none;
   border: none;
   margin: 0;
 }
 
 .contact-form input[type=email] {
-  /*-webkit-transition: all 0.5s ease-in-out;*/
-  /*transition: all 0.5s ease-in-out;*/
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 3px 0 0 3px;
   color: #5e6272;
   padding: 12px 100px 10px 10px;
   font-size: 12px;
-  /*width: 72%;*/
 }
 
 .contact-form input[type=submit] {
   -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.8);
   background-color: transparent;
@@ -294,7 +274,6 @@ p {
   cursor: pointer;
   color: white;
   font-size: 11px;
-  /*width: 28%;*/
 }
 
 em {

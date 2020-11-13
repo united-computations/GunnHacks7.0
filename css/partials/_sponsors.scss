@@ -2,11 +2,20 @@
 
 #sponsors {
   background-color: white;
-  padding-top: 20px;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
   color: black;
 
+  // The sponsor images and links
   a {
+    margin: 5px;
     color: black;
+
+    img {
+      max-height: 130px;
+      max-width: 300px;
+    }
   }
 
   h2 {
