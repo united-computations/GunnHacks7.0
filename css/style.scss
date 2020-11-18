@@ -2,7 +2,6 @@
 @import './partials/_schedule'; // Schedule
 @import './partials/_faq'; // FAQ
 @import './partials/_sponsors'; // Sponsors
-@import './partials/404'; // 404
 
 
 @mixin background-size($value) {
@@ -10,6 +9,11 @@
   -moz-background-size: $value;
   -o-background-size: $value;
   background-size: $value;
+}
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -o-transition: $value;
+  transition: $value;
 }
 
 %margin-centered {
@@ -86,9 +90,7 @@ h3 {
     background-color: #f7a00a;
     top: 0;
     left: -100%;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    @include transition(all 0.3s ease-in-out);
   }
 
   &:after {
@@ -184,34 +186,32 @@ p {
 }
 
 .contact-form input[type="email"], .contact-form input[type="submit"] {
-  /*display: inline-block;*/
-  /*padding: 0.8em;*/
+  // display: inline-block;
+  // padding: 0.8em;
   outline: none;
   border: none;
   margin: 0;
 }
 
 .contact-form input[type="email"] {
-  /*-webkit-transition: all 0.5s ease-in-out;*/
-  /*transition: all 0.5s ease-in-out;*/
+  // @include transition(all 0.5s ease-in-out);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 3px 0 0 3px;
   color: #5e6272;
   padding: 12px 100px 10px 10px;
   font-size: 12px;
-  /*width: 72%;*/
+  // width: 72%;
 }
 
 .contact-form input[type="submit"] {
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  @include transition(all 0.5s ease-in-out);
   border: 1px solid rgba(255, 255, 255, 0.8);
   background-color: transparent;
   border-radius: 0 3px 3px 0;
   cursor: pointer;
   color: white;
   font-size: 11px;
-  /*width: 28%;*/
+  // width: 28%;
 }
 
 em {
