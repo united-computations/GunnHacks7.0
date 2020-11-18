@@ -84,15 +84,17 @@ footer {
   display: flex;
   flex-wrap: wrap;
   color: black;
+  align-content: flex-start;
 }
 #sponsors a {
   text-decoration: none;
-  margin: 0 2rem;
   color: black;
+  text-decoration: none;
 }
 #sponsors a img {
   max-height: 8rem;
   max-width: 24rem;
+  margin: 2rem 2rem;
 }
 #sponsors h2 {
   border-bottom: 2px solid black;
