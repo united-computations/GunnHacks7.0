@@ -82,9 +82,16 @@ footer {
   background-color: white;
   padding-top: 20px;
   color: black;
+  align-content: flex-start;
 }
 #sponsors a {
   color: black;
+  text-decoration: none;
+}
+#sponsors a img {
+  max-height: 8rem;
+  max-width: 30%;
+  margin: 2rem 2rem;
 }
 #sponsors h2 {
   border-bottom: 2px solid black;
@@ -364,15 +371,6 @@ button :focus {
 
 .home-wrapper {
   margin-top: 1rem;
-}
-
-#sponsors #sponsors-content a {
-  text-decoration: none;
-}
-#sponsors #sponsors-content a img {
-  max-height: 8rem;
-  max-width: 30%;
-  margin: 0 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
