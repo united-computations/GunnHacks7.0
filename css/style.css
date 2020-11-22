@@ -49,6 +49,10 @@ footer {
   font-family: "Helvetica", sans-serif;
 }
 
+#about p {
+  font-size: 1.3em;
+}
+
 #schedule {
   font-family: "Helvetica", sans-serif;
 }
@@ -69,6 +73,7 @@ footer {
   cursor: pointer;
 }
 #faq .question-whole .answer {
+  font-size: 1.1em;
   display: none;
 }
 #faq .question-whole .symbol h3 {
@@ -84,15 +89,17 @@ footer {
   display: flex;
   flex-wrap: wrap;
   color: black;
+  align-content: flex-start;
+  font-size: 1.3em;
 }
 #sponsors a {
+  color: #f33;
   text-decoration: none;
-  margin: 0 2rem;
-  color: black;
 }
 #sponsors a img {
   max-height: 8rem;
   max-width: 24rem;
+  margin: 2rem 2rem;
 }
 #sponsors h2 {
   border-bottom: 2px solid black;
@@ -201,7 +208,6 @@ body {
 }
 .center .content {
   font-family: "Helvetica", sans-serif;
-  text-align: left;
   margin-top: 20px;
 }
 .center .content h2 {
@@ -248,7 +254,7 @@ a:hover {
 }
 
 p {
-  font-family: "Lato", sans-serif;
+  font-family: "Abel", "Helvetica Neue", sans-serif;
 }
 
 .contact-form input[type=email], .contact-form input[type=submit] {

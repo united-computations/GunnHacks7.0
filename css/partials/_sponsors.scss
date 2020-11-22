@@ -6,16 +6,18 @@
   display: flex;
   flex-wrap: wrap;
   color: black;
+  align-content: flex-start;
+  font-size: 1.3em;
+
 
   // The sponsor images and links
   a {
+    color: #f33;
     text-decoration: none;
-    margin: 0 2rem;
-    color: black;
-
     img {
       max-height: 8rem;
       max-width: 24rem;
+      margin:2rem 2rem;
     }
   }
 
