@@ -70,6 +70,7 @@ footer {
   grid-auto-flow: row;
 }
 #faq .questions .question-whole {
+  text-align: left;
   padding: 1%;
   margin: 1%;
 }
@@ -217,6 +218,9 @@ body {
   }
 }
 */
+.center {
+  text-align: center;
+}
 .center .content {
   font-family: "Helvetica", sans-serif;
   max-width: 1024px;
