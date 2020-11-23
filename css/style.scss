@@ -26,7 +26,7 @@ body {
 
 // The background and container for the GunnHacks heading (and 404 page)
 #hero {
-  background-image: url("../img/bg.jpg") !important;
+  background-image: url("../img/bg.svg") !important;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -117,7 +117,8 @@ h3 {
   // These work and would remove the need of margin-centered but MDN recommends not using them in production builds
   //text-align: -webkit-center;
   //text-align: -moz-center;
-
+  text-align: center; 
+  
   // The sections
   .content {
     font-family: "Helvetica", sans-serif;
