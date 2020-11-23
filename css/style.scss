@@ -1,4 +1,5 @@
 @import './partials/_heading'; // Heading
+@import './partials/_about'; // About
 @import './partials/_schedule'; // Schedule
 @import './partials/_faq'; // FAQ
 @import './partials/_sponsors'; // Sponsors
@@ -14,10 +15,6 @@
   -webkit-transition: $value;
   -o-transition: $value;
   transition: $value;
-}
-
-%margin-centered {
-  margin: 0 auto 0 auto;
 }
 
 
@@ -117,20 +114,17 @@ h3 {
 // The container for the FAQ, Schedule, Sponsors, and Previous Years sections
 // Previously a deprecated <center> tag
 .center {
-  text-align: center;
   // These work and would remove the need of margin-centered but MDN recommends not using them in production builds
   //text-align: -webkit-center;
   //text-align: -moz-center;
 
-  > * > * {
-    @extend %margin-centered;
-  }
-
-  // The headers for the FAQ, Schedule, Sponsors, and Previous Years sections
+  // The sections
   .content {
     font-family: "Helvetica", sans-serif;
-    text-align: left;
-    margin-top: 20px;
+    max-width: 1024px; // From .row
+    width: 82.6666666667%; // From .ten.columns
+    padding: 10px;
+    margin: 20px auto;
 
     h2 {
       border-bottom: 2px solid white;
@@ -182,7 +176,7 @@ a {
 }
 
 p {
-  font-family: "Lato", sans-serif;
+  font-family: "Abel", "Helvetica Neue", sans-serif;
 }
 
 .contact-form input[type="email"], .contact-form input[type="submit"] {

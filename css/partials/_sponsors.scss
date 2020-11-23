@@ -1,22 +1,39 @@
 // CSS for the Sponsors section
 
-#sponsors {
+#sponsors-bg {
   background-color: white;
-  padding: 20px 0;
-  display: flex;
-  flex-wrap: wrap;
-  color: black;
-  align-content: flex-start;
+  width: 100%;
+  padding: 20px
+}
 
-  // The sponsor images and links
+#sponsors {
+  padding: 20px 0;
+  color: black;
+  font-size: 1.3em;
+
+  #sponsors-content {
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+
+    // The sponsor images and links
+    a {
+      flex: 1 1 24rem;
+
+      img {
+        max-height: 8rem;
+        max-width: 24rem;
+        margin: 0.5rem 2rem;
+      }
+    }
+  }
+
   a {
     color: #f33;
     text-decoration: none;
-    img {
-      max-height: 8rem;
-      max-width: 24rem;
-      margin:2rem 2rem;
-    }
   }
 
   h2 {
