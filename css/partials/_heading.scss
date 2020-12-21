@@ -34,13 +34,12 @@ section {
     .nav {
       font-family: "Abel", "Helvetica", sans-serif;
       text-transform: uppercase;
-      word-spacing: 20px;
       font-size: 14pt;
       margin-top: 30px;
 
       a {
         text-decoration: none;
-
+        padding: 10px;
         &:hover {
           text-decoration: underline;
         }
