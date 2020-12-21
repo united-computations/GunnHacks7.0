@@ -24,12 +24,12 @@ section.centered h1 {
 section.centered .nav {
   font-family: "Abel", "Helvetica", sans-serif;
   text-transform: uppercase;
-  word-spacing: 20px;
   font-size: 14pt;
   margin-top: 30px;
 }
 section.centered .nav a {
   text-decoration: none;
+  padding: 10px;
 }
 section.centered .nav a:hover {
   text-decoration: underline;
