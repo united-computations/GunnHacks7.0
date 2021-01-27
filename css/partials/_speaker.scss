@@ -1,6 +1,7 @@
 .speaker-content {
     display: grid;
-    grid-template-columns: 20vw 1fr;
+    grid-template-columns: 20vw 380px;
+    justify-content: center;
 
     // Speaker image
     img {
