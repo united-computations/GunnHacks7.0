@@ -1,8 +1,10 @@
-@import './partials/_heading'; // Heading
-@import './partials/_about'; // About
-@import './partials/_schedule'; // Schedule
-@import './partials/_faq'; // FAQ
-@import './partials/_sponsors'; // Sponsors
+@import 'partials/heading'; // Heading
+@import 'partials/about'; // About
+@import 'partials/schedule'; // Schedule
+@import 'partials/speaker'; // Keynote Speaker
+@import 'partials/mentors'; // Mentors and judges
+@import 'partials/faq'; // FAQ
+@import 'partials/sponsors'; // Sponsors
 
 
 @mixin background-size($value) {
