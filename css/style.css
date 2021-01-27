@@ -61,6 +61,59 @@ footer {
   font-family: "Abel";
 }
 
+.speaker-content {
+  display: grid;
+  grid-template-columns: 20vw 380px;
+  justify-content: center;
+}
+.speaker-content img {
+  border-radius: 50%;
+  width: 16vw;
+}
+.speaker-content .bio {
+  text-align: left;
+}
+.speaker-content .bio .name {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.speaker-content .bio p {
+  margin-bottom: 0.5rem;
+}
+
+#mentors h2 {
+  margin-bottom: 4rem;
+}
+#mentors .photos {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+#mentors .photos .photo {
+  flex: 1 0 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+#mentors .photos .photo img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+#mentors .photos .photo .name {
+  font-size: 20px;
+  font-weight: bold;
+}
+#mentors .photos .photo .role {
+  font-style: italic;
+}
+#mentors .photos .photo p {
+  margin-bottom: 0;
+}
+
 #faq .questions {
   display: grid;
   grid-template-columns: 50% 50%;
