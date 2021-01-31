@@ -1,0 +1,43 @@
+#mentors {
+    h2 {
+        margin-bottom: 4rem;
+    }
+
+    .photos {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+
+        .photo {
+            flex: 1 0 240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2.5rem;
+
+            // Mentor picture
+            img {
+                height: 15rem;
+                width: 15rem;
+                border-radius: 50%;
+                margin-bottom: 1rem;
+            }
+
+            // Mentor name
+            .name {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            // Mentor role
+            .role {
+                font-style: italic;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+

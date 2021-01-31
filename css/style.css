@@ -53,15 +53,65 @@ footer {
   font-size: 1.3em;
 }
 
-#schedule {
-  font-family: "Helvetica", sans-serif;
-}
 #schedule h6 {
   text-align: center;
   font-weight: bold;
   font-size: 15pt;
   text-transform: uppercase;
   font-family: "Abel";
+}
+
+.speaker-content {
+  display: grid;
+  grid-template-columns: 20vw 380px;
+  justify-content: center;
+}
+.speaker-content img {
+  border-radius: 50%;
+  width: 16vw;
+}
+.speaker-content .bio {
+  text-align: left;
+}
+.speaker-content .bio .name {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.speaker-content .bio p {
+  margin-bottom: 0.5rem;
+}
+
+#mentors h2 {
+  margin-bottom: 4rem;
+}
+#mentors .photos {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+#mentors .photos .photo {
+  flex: 1 0 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+#mentors .photos .photo img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+#mentors .photos .photo .name {
+  font-size: 20px;
+  font-weight: bold;
+}
+#mentors .photos .photo .role {
+  font-style: italic;
+}
+#mentors .photos .photo p {
+  margin-bottom: 0;
 }
 
 #faq .questions {
@@ -84,20 +134,12 @@ footer {
 }
 #faq .questions .question-whole .symbol h3 {
   float: left;
-  margin-top: 0;
+  margin-top: 0.01em;
   margin-bottom: 0;
   margin-right: 1em;
 }
 
-#sponsors-bg {
-  background-color: white;
-  width: 100%;
-  padding: 20px;
-}
-
 #sponsors {
-  padding: 20px 0;
-  color: black;
   font-size: 1.3em;
 }
 #sponsors #sponsors-content {
@@ -115,13 +157,6 @@ footer {
   max-height: 8rem;
   max-width: 24rem;
   margin: 0.5rem 2rem;
-}
-#sponsors a {
-  color: #f33;
-  text-decoration: none;
-}
-#sponsors h2 {
-  border-bottom: 2px solid black;
 }
 #sponsors button {
   color: black;
@@ -225,11 +260,10 @@ body {
   font-family: "Helvetica", sans-serif;
   max-width: 1024px;
   width: 82.6666666667%;
-  padding: 10px;
-  margin: 20px auto;
+  padding: 20px 10px;
+  margin: 0px auto;
 }
 .center .content h2 {
-  border-bottom: 2px solid white;
   font-family: "Abel";
   text-transform: uppercase;
 }
@@ -368,6 +402,29 @@ button :focus {
 
 .home-wrapper {
   margin-top: 1rem;
+}
+
+.strip {
+  width: 100%;
+}
+
+.white-bg {
+  background-color: white;
+  color: #333;
+}
+.white-bg a {
+  color: #f33;
+  text-decoration: none;
+}
+.white-bg h2 {
+  border-bottom: 2px solid #333;
+}
+
+.red-bg {
+  background-color: #dd5d5c;
+}
+.red-bg h2 {
+  border-bottom: 2px solid white;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,16 +1,9 @@
 // CSS for the Sponsors section
 
-#sponsors-bg {
-  background-color: white;
-  width: 100%;
-  padding: 20px
-}
-
 #sponsors {
-  padding: 20px 0;
-  color: black;
   font-size: 1.3em;
 
+  // the sponsor images
   #sponsors-content {
     margin: 0 auto;
     padding-top: 1.5rem;
@@ -31,15 +24,7 @@
     }
   }
 
-  a {
-    color: #f33;
-    text-decoration: none;
-  }
-
-  h2 {
-    border-bottom: 2px solid black;
-  }
-
+  
   button {
     color: black;
     border-color: black;
