@@ -53,6 +53,9 @@ footer {
   font-size: 1.3em;
 }
 
+#schedule th:first-child {
+  width: 80px;
+}
 #schedule h6 {
   text-align: center;
   font-weight: bold;
@@ -150,10 +153,10 @@ footer {
   align-items: center;
   text-align: center;
 }
-#sponsors #sponsors-content a {
+#sponsors #sponsors-content div {
   flex: 1 1 24rem;
 }
-#sponsors #sponsors-content a img {
+#sponsors #sponsors-content div img {
   max-height: 8rem;
   max-width: 24rem;
   margin: 0.5rem 2rem;
