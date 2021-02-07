@@ -2,6 +2,9 @@
 
 #schedule {
   //font-family: "Helvetica", sans-serif;
+  th:first-child {
+    width: 80px;
+  }
 
   h6 {
     text-align: center;
@@ -10,4 +13,5 @@
     text-transform: uppercase;
     font-family: "Abel";
   }
+
 }
