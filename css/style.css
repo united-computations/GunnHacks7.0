@@ -166,6 +166,14 @@ footer {
   border-color: black;
 }
 
+.guide iframe {
+  width: 75vw;
+  margin: 0 12.5vw;
+}
+.guide #back-arrow {
+  color: black;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
